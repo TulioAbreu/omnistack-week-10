@@ -4,12 +4,14 @@ const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
     async index(req, res) {
+	console.log("Returning all devs");
         const devs = await Dev.find();
         return res.json(devs);
     },
 
     async store(req, res) {
-        const { 
+        console.log("Storing a new dex");
+	const { 
             github_username, 
             techs, 
             latitude, 
